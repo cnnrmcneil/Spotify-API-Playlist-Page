@@ -4,7 +4,7 @@ export const initialState = {
     playing: false,
     item: null,
     // token placeholder for automatic login, set to null when done
-    token: 'BQDNe7F3KOwAU5O6rGG5IaVVq-O6D_V8h3ZzxZrjGHZ6e-FHQzmrHdhvNr5npmjVxQb1jWCbM0YfiZOj7tzRUmWJ-TfzWQboYxV5TySVXlctHmquCgenmXO-bqkGdrImJv5yuIeYSpst-Yub7KKrxMGh7KmLfC3QMLf-brBf_39OdaGFfpbEJntyQbIIR6estdfaog',
+    token: null
 }
 
 const reducer = (state, action) => {
