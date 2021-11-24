@@ -1,0 +1,40 @@
+.container {
+  border: 2px;
+  border-style: groove;
+  display: flex;
+  justify-content: space-around;
+}
+
+.title {
+  border: 2px;
+  border-style: groove;
+  text-align: center;
+}
+
+.active-playlist-box {
+  border: 2px;
+  border-style: groove;
+  width: 30vw;
+  height: 30vh;
+}
+
+.songlist {
+  border: 2px;
+  border-style: groove;
+  width: 40vw;
+  height: 47vh;
+}
+
+.all-playlist-box {
+  border: 2px;
+  border-style: groove;
+  width: 40vw;
+  height: 37vh;
+}
+
+.controller {
+  border: 2px;
+  border-style: groove;
+  width: 40vw;
+  height: 10vh;
+}
