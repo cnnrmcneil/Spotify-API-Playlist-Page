@@ -3,7 +3,7 @@ import React from "react";
 const Controller = () => {
 
     return(
-        <div></div>
+        <div className="controller" ><h1>Controller</h1></div>
     )
 }
 

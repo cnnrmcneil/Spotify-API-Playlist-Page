@@ -9,7 +9,7 @@ import SpotifyWebApi from 'spotify-web-api-js'
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -38,11 +38,19 @@ function App() {
 
         })
       })
+      // Get a user's playlists
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists,
+        });
+      });
     }
     
     console.log('Token: ', token);
-  }, []);
+  }, [token, dispatch]);
 
+  console.log("playlists are: " )
   console.log('User is: ', user);
   console.log('Token is: ', token);
 

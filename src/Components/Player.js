@@ -8,17 +8,18 @@ import './player.css'
 
 const Player = () => {
 
-    return(
+    return (
         <div><h1 className="title">Weekend Wrecked</h1><div className="container">
         <div className="leftbox">
-        <ActivePlaylist className="active-playlist-box"></ActivePlaylist>
-        <AllPlaylistBox className="all-playlist-box"></AllPlaylistBox>
+        <ActivePlaylist/>
+        <AllPlaylistBox/>
         </div>
         <div className="rightbox">
-        <Songlist className="songlist"></Songlist>
-        <Controller className="controller"></Controller>
+        <Songlist/>
+        <Controller className="controller" />
         </div>
-        </div></div>
+        </div>
+        </div>
     )
 }
 

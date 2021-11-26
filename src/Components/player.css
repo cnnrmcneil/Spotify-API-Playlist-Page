@@ -3,6 +3,9 @@
   border-style: groove;
   display: flex;
   justify-content: space-around;
+  height: 75vh;
+  width: 95vw;
+  margin: 0 2.5vw;
 }
 
 .title {
@@ -16,6 +19,18 @@
   border-style: groove;
   width: 30vw;
   height: 22vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.active-playlist-box img {
+  width: 110px;
+  height: 110px;
+}
+.active-playlist-box h5 {
+  margin: 0;
 }
 
 .songlist {
@@ -23,13 +38,94 @@
   border-style: groove;
   width: 40vw;
   height: 55vh;
+  margin: auto;
+  overflow: auto;
 }
-
+.songlist li span {
+  margin-left: 20px;
+}
+.songlist ol {
+  counter-reset: item;
+  list-style-type: none;
+}
+.songlist li {
+  display: block;
+  margin: 10px 20px 10px 0px;
+  width: 20px;
+}
+.songlistLi:before {
+  content: counter(item) "  ";
+  counter-increment: item;
+}
+.songartist {
+  display: flex;
+  flex-direction: column;
+}
+.songbox {
+  display: flex;
+  flex-direction: row;
+}
 .all-playlist-box {
   border: 2px;
   border-style: groove;
-  width: 40vw;
+  width: 44vw;
   height: 45vh;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  overflow: auto;
+}
+.all-playlist-box img {
+  width: 90px;
+  height: 90px;
+  padding: 10px;
+  margin: auto;
+  z-index: 9999;
+}
+
+.imageBox {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0px;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 90px;
+  width: 90px;
+  margin: auto;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008cba;
+}
+.imageBox:hover .overlay {
+  opacity: 0.5;
+}
+.overlay p {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(54, 54, 255, 0.479);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .controller {
@@ -37,19 +133,24 @@
   border-style: groove;
   width: 40vw;
   height: 10vh;
+  margin: auto;
 }
 
 .leftbox {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  flex-direction: column;
   border: 2px;
   border-style: groove;
+  width: 45vw;
 }
 .rightbox {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  flex-direction: column;
   border: 2px;
   border-style: groove;
+  width: 45vw;
 }
