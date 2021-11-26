@@ -15,21 +15,21 @@
   border: 2px;
   border-style: groove;
   width: 30vw;
-  height: 30vh;
+  height: 22vh;
 }
 
 .songlist {
   border: 2px;
   border-style: groove;
   width: 40vw;
-  height: 47vh;
+  height: 55vh;
 }
 
 .all-playlist-box {
   border: 2px;
   border-style: groove;
   width: 40vw;
-  height: 37vh;
+  height: 45vh;
 }
 
 .controller {
@@ -37,4 +37,19 @@
   border-style: groove;
   width: 40vw;
   height: 10vh;
+}
+
+.leftbox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 2px;
+  border-style: groove;
+}
+.rightbox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 2px;
+  border-style: groove;
 }
