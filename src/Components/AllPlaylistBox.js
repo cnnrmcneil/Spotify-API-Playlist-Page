@@ -2,8 +2,7 @@ import React from "react";
 import { useDataLayerValue } from "./DataLayer";
 
 const AllPlaylistBox = () => {
-    const [{ playlists} , dispatch] = useDataLayerValue()
-    console.log(playlists)
+    const [{ playlists } , dispatch] = useDataLayerValue()
     return(
         <div className="all-playlist-box">
         {playlists?.items?.map((playlist) => {

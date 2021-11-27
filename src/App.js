@@ -9,7 +9,7 @@ import SpotifyWebApi from 'spotify-web-api-js'
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token, playlists }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists, devices, playing, track }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -28,31 +28,44 @@ function App() {
       
       spotify.setAccessToken(_token);
       
+      //Get username
       spotify.getMe().then((user) => {
-        // console.log('User is: ', user);
-        
-        
         dispatch({
           type: 'SET_USER',
           user: user,
-
         })
       })
+
       // Get a user's playlists
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
-          playlists,
+          playlists: playlists
         });
       });
+      // Get user devices
+      spotify.getMyDevices().then((devices) => {
+        dispatch({
+          type: "SET_DEVICES",
+          devices: devices[0]
+        })
+      })
+      spotify.play().then((playing) => {
+        dispatch({
+          type: "SET_PLAYING",
+          playing: playing
+        })
+      })
     }
     
     console.log('Token: ', token);
   }, [token, dispatch]);
 
-  console.log("playlists are: " )
-  console.log('User is: ', user);
-  console.log('Token is: ', token);
+  // console.log('devices are: ', devices)
+  // // console.log("playlists are: " )
+  // console.log('User is: ', user);
+  // console.log('Token is: ', token);
+  console.log(devices)
 
   return (
     <div>
