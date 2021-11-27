@@ -6,7 +6,7 @@ const Controller = () => {
 const [{ playing, devices, token, activePlaylist }, dispatch] = useDataLayerValue()
 
     return(
-        <div className="controller" ><h1>Controller</h1>
+        <div className="controller" >
         <SpotifyPlayer
   token={token}
   uris={[`${activePlaylist.uri}`]}

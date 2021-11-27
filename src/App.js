@@ -5,11 +5,12 @@ import Player from './Components/Player';
 import { getTokenFromUrl } from './Components/Spotify'
 import { useDataLayerValue } from "./Components/DataLayer"
 import SpotifyWebApi from 'spotify-web-api-js'
+import ActivePlaylist from './Components/ActivePlaylist';
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token, playlists, devices, playing, track }, dispatch] = useDataLayerValue();
+  const [{ token, devices, activePlaylist, songlist }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -50,14 +51,21 @@ function App() {
           devices: devices[0]
         })
       })
+      //set play
       spotify.play().then((playing) => {
         dispatch({
           type: "SET_PLAYING",
           playing: playing
         })
       })
+      spotify.getPlaylist(activePlaylist).then((response) => {
+        dispatch({
+          type: "SET_SONGLIST",
+          songlist: response
+        })
+      })
     }
-    
+    console.log('this is songlist', songlist)
     console.log('Token: ', token);
   }, [token, dispatch]);
 

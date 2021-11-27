@@ -2,7 +2,7 @@ import React from "react";
 import { useDataLayerValue } from "./DataLayer";
 
 const AllPlaylistBox = () => {
-    const [{ playlists, activePlaylist } , dispatch] = useDataLayerValue()
+    const [{ playlists, activePlaylist, songlist } , dispatch] = useDataLayerValue()
     return(
         <div className="all-playlist-box">
         {playlists?.items?.map((_playlist) => {
@@ -12,6 +12,7 @@ const AllPlaylistBox = () => {
                 type: "SET_ACTIVEPLAYLIST",
                 activePlaylist: _playlist
             })
+            console.log('this is songlist', songlist)
         }}>
         <img src={_playlist.images[0].url} alt='albumcover'></img>
         <div className="overlay"><p>{_playlist.name}</p></div>
