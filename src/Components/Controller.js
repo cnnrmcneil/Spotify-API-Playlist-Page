@@ -1,23 +1,16 @@
 import React from "react";
 import { useDataLayerValue } from "./DataLayer";
+import SpotifyPlayer from 'react-spotify-web-playback'
 
 const Controller = () => {
-const [{ playing, devices }, dispatch] = useDataLayerValue()
+const [{ playing, devices, token, activePlaylist }, dispatch] = useDataLayerValue()
 
     return(
         <div className="controller" ><h1>Controller</h1>
-        <button onClick={() => {
-
-            dispatch ({
-                devices: devices.devices[0].is_active = true
-            })
-
-            dispatch({
-                playing: true
-            })
-            console.log(devices.devices[0].is_active)
-            console.log(devices)
-        }}>Click to play</button></div>
+        <SpotifyPlayer
+  token={token}
+  uris={[`${activePlaylist.uri}`]}
+/></div>
     )
 }
 

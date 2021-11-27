@@ -6,7 +6,9 @@ export const initialState = {
     // token placeholder for automatic login, set to null when done
     token: null,
     // devices: [0],
-    track: null
+    track: null,
+    devices: [],
+    activePlaylist: null
 }
 
 const reducer = (state, action) => {
@@ -42,6 +44,11 @@ console.log('Reducer at work: ', action);
             return {
                 ...state,
                 track: action.track
+            }
+        case 'SET_ACTIVEPLAYLIST':
+            return {
+                ...state,
+                activePlaylist: action.activePlaylist
             }
             default: 
                 return state;
