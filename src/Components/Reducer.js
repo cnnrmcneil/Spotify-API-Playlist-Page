@@ -1,6 +1,6 @@
 export const initialState = {
     user: null,
-    playlists: ['37i9dQZEVXbMDoHDwVN2tF'],
+    playlists: [''],
     playing: false,
     item: null,
     // token placeholder for automatic login, set to null when done
@@ -8,9 +8,10 @@ export const initialState = {
     // devices: [0],
     track: null,
     devices: [],
-    activePlaylist: '37i9dQZEVXbMDoHDwVN2tF',
+    activePlaylist: '',
     activePlaylistImage: '',
-    songlist: []
+    songlist: null,
+    playlistID: ''
 }
 
 const reducer = (state, action) => {
@@ -61,6 +62,11 @@ console.log('Reducer at work: ', action);
             return {
                 ...state,
                 songlist: action.songlist
+            }
+        case 'SET_PLAYLISTID':
+            return {
+                ...state,
+                playlistID: action.playlistID
             }
             default: 
                 return state;

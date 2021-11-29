@@ -3,19 +3,20 @@ import ActivePlaylist from './ActivePlaylist'
 import AllPlaylistBox from './AllPlaylistBox'
 import Songlist from './Songlist'
 import Controller from './Controller'
+import { useDataLayerValue } from "./DataLayer";
 
 import './player.css'
 
 const Player = () => {
-
+    const [{ activePlaylist, songlist }, dispatch] = useDataLayerValue();
     return (
-        <div><h1 className="title">Weekend Wrecked</h1><div className="container">
+        <div><h1 className="title">Playlists</h1><div className="container">
         <div className="leftbox">
-        <ActivePlaylist/>
+        { activePlaylist ? ( <ActivePlaylist/> ): (<div></div>)}
         <AllPlaylistBox/>
         </div>
         <div className="rightbox">
-        <Songlist/>
+        { songlist ? (<Songlist/>): (<div></div>)}
         <Controller className="controller" />
         </div>
         </div>

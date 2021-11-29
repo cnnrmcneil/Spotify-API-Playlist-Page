@@ -6,11 +6,12 @@ import { getTokenFromUrl } from './Components/Spotify'
 import { useDataLayerValue } from "./Components/DataLayer"
 import SpotifyWebApi from 'spotify-web-api-js'
 import ActivePlaylist from './Components/ActivePlaylist';
+import axios from 'axios';
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ token, devices, activePlaylist, songlist }, dispatch] = useDataLayerValue();
+  const [{ token, devices, activePlaylist, songlist, playlistID }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -58,17 +59,19 @@ function App() {
           playing: playing
         })
       })
-      spotify.getPlaylist(activePlaylist).then((response) => {
+      spotify.getPlaylist(playlistID).then((playlistTracks) => {
+        console.log('songlist called in appJS', playlistID)
         dispatch({
           type: "SET_SONGLIST",
-          songlist: response
+          songlist: playlistTracks,
         })
       })
     }
-    console.log('this is songlist', songlist)
-    console.log('Token: ', token);
   }, [token, dispatch]);
-
+  
+  console.log('this is playlistID', playlistID)
+  console.log('this is songlist', songlist)
+  console.log('Token: ', token);
   // console.log('devices are: ', devices)
   // // console.log("playlists are: " )
   // console.log('User is: ', user);
