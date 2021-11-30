@@ -1,63 +1,62 @@
-import React, { useEffect, Switch, Route } from 'react'
-import './App.css';
-import Login from './Components/Login';
-import Player from './Components/Player';
-import { getTokenFromUrl } from './Components/Spotify'
-import { useDataLayerValue } from "./Components/DataLayer"
-import SpotifyWebApi from 'spotify-web-api-js'
-import About  from './Components/About';
+import React, { useEffect } from "react";
+import "./App.css";
+import Login from "./Components/Login";
+import Player from "./Components/Player";
+import { getTokenFromUrl } from "./Components/Spotify";
+import { useDataLayerValue } from "./Components/DataLayer";
+import SpotifyWebApi from "spotify-web-api-js";
+import About from "./Components/About";
+import { Switch, Route, Link } from "react-router-dom";
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ token, devices, songlist, playlistID }, dispatch] = useDataLayerValue();
-
+  const [{ token, devices, songlist, playlistID }, dispatch] =
+    useDataLayerValue();
 
   useEffect(() => {
-    const hash = getTokenFromUrl()
+    const hash = getTokenFromUrl();
     window.location.hash = "";
     let _token = hash.access_token;
 
-    console.log('this is _token', _token)
+    console.log("this is _token", _token);
     if (_token) {
-
       dispatch({
         type: "SET_TOKEN",
         token: _token,
       });
 
-      
       spotify.setAccessToken(_token);
-      
+
       //Get username
       spotify.getMe().then((user) => {
         dispatch({
-          type: 'SET_USER',
+          type: "SET_USER",
           user: user,
-        })
-      })
+        });
+      });
 
       // Get a user's playlists
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
-          playlists: playlists
+          playlists: playlists,
         });
       });
       // Get user devices
       spotify.getMyDevices().then((devices) => {
         dispatch({
           type: "SET_DEVICES",
-          devices: devices[0]
-        })
-      })
+          devices: devices[0],
+        });
+      });
       //set play
       spotify.play().then((playing) => {
         dispatch({
           type: "SET_PLAYING",
-          playing: playing
-        })
-      })
+          playing: playing,
+        });
+      });
       // spotify.getPlaylist(playlistID).then((playlistTracks) => {
       //   console.log('songlist called in appJS', playlistID)
       //   dispatch({
@@ -67,34 +66,77 @@ function App() {
       // })
     }
   }, [token, dispatch]);
-  
-  console.log('this is playlistID', playlistID)
-  console.log('this is songlist', songlist)
-  console.log('Token: ', token);
+
+  console.log("this is playlistID", playlistID);
+  console.log("this is songlist", songlist);
+  console.log("Token: ", token);
   // console.log('devices are: ', devices)
   // // console.log("playlists are: " )
   // console.log('User is: ', user);
   // console.log('Token is: ', token);
-  console.log(devices)
+  console.log(devices);
 
   return (
-    <div className='allBackground'>
-    <header className='header'>
-    <img src=".src/logoforspotifyapi.png" width="50px" height='50px' alt='logo'/><ul>
-    <li><a href='/'>Home</a></li>
-    <li><a href='/about'>About</a></li>
-    <li><a href='/' alt='Sign Out'>{token ? <a alt='Sign Out' onClick={() => {
-      dispatch ({
-        type: "SET_TOKEN",
-        token: null,
-      })
-    }}>Sign Out</a> : <Login />}</a></li>
-
-    </ul></header>
-    <Switch>
-    <Route exact path ='/' component={ token ? ( <Player spotify={spotify}/>): (<div><h1 style={{color: 'white', textAlign: 'center', paddingTop: '200px'}}>Please Login To View</h1></div>)} />
-    <Route exact path ='/about' component={About}/>
-    </Switch>
+    <div className="allBackground">
+      <header className="header">
+        <img
+          src=".src/logoforspotifyapi.png"
+          width="50px"
+          height="50px"
+          alt="logo"
+        />
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <a href="/" alt="Sign Out">
+              {token ? (
+                <a
+                  alt="Sign Out"
+                  onClick={() => {
+                    dispatch({
+                      type: "SET_TOKEN",
+                      token: null,
+                    });
+                  }}
+                >
+                  Sign Out
+                </a>
+              ) : (
+                <Login />
+              )}
+            </a>
+          </li>
+        </ul>
+      </header>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          component={() => {
+            return token ? (
+              <Player spotify={spotify} />
+            ) : (
+              <div>
+                <h1
+                  style={{
+                    color: "white",
+                    textAlign: "center",
+                    paddingTop: "200px",
+                  }}
+                >
+                  Please Login To View
+                </h1>
+              </div>
+            );
+          }}
+        />
+        <Route exact path="/about" component={About} />
+      </Switch>
     </div>
   );
 }
