@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Spotify-API-Playlist-Page/static/css/main.2aeaaa3c.chunk.css",
-    "main.js": "/Spotify-API-Playlist-Page/static/js/main.a285568f.chunk.js",
-    "main.js.map": "/Spotify-API-Playlist-Page/static/js/main.a285568f.chunk.js.map",
+    "main.js": "/Spotify-API-Playlist-Page/static/js/main.dd24390f.chunk.js",
+    "main.js.map": "/Spotify-API-Playlist-Page/static/js/main.dd24390f.chunk.js.map",
     "runtime-main.js": "/Spotify-API-Playlist-Page/static/js/runtime-main.5585d057.js",
     "runtime-main.js.map": "/Spotify-API-Playlist-Page/static/js/runtime-main.5585d057.js.map",
     "static/js/2.6da5830b.chunk.js": "/Spotify-API-Playlist-Page/static/js/2.6da5830b.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5585d057.js",
     "static/js/2.6da5830b.chunk.js",
     "static/css/main.2aeaaa3c.chunk.css",
-    "static/js/main.a285568f.chunk.js"
+    "static/js/main.dd24390f.chunk.js"
   ]
 }
