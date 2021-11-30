@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Switch, Route } from 'react'
 import './App.css';
 import Login from './Components/Login';
 import Player from './Components/Player';
 import { getTokenFromUrl } from './Components/Spotify'
 import { useDataLayerValue } from "./Components/DataLayer"
 import SpotifyWebApi from 'spotify-web-api-js'
+import About  from './Components/About';
 
 const spotify = new SpotifyWebApi();
 
@@ -81,7 +82,7 @@ function App() {
     <header className='header'>
     <img src=".src/logoforspotifyapi.png" width="50px" height='50px' alt='logo'/><ul>
     <li><a href='/'>Home</a></li>
-    <li><a href='/'>About</a></li>
+    <li><a href='/about'>About</a></li>
     <li><a href='/' alt='Sign Out'>{token ? <a alt='Sign Out' onClick={() => {
       dispatch ({
         type: "SET_TOKEN",
@@ -90,7 +91,10 @@ function App() {
     }}>Sign Out</a> : <Login />}</a></li>
 
     </ul></header>
-    { token ? ( <Player spotify={spotify}/>): (<div><h1 style={{color: 'white', textAlign: 'center', paddingTop: '200px'}}>Please Login To View</h1></div>)}
+    <Switch>
+    <Route exact path ='/' component={ token ? ( <Player spotify={spotify}/>): (<div><h1 style={{color: 'white', textAlign: 'center', paddingTop: '200px'}}>Please Login To View</h1></div>)} />
+    <Route exact path ='/about' component={About}/>
+    </Switch>
     </div>
   );
 }
