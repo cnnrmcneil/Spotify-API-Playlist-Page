@@ -59,13 +59,13 @@ function App() {
           playing: playing
         })
       })
-      spotify.getPlaylist(playlistID).then((playlistTracks) => {
-        console.log('songlist called in appJS', playlistID)
-        dispatch({
-          type: "SET_SONGLIST",
-          songlist: playlistTracks,
-        })
-      })
+      // spotify.getPlaylist(playlistID).then((playlistTracks) => {
+      //   console.log('songlist called in appJS', playlistID)
+      //   dispatch({
+      //     type: "SET_SONGLIST",
+      //     songlist: playlistTracks,
+      //   })
+      // })
     }
   }, [token, dispatch]);
   
@@ -79,7 +79,7 @@ function App() {
   console.log(devices)
 
   return (
-    <div>
+    <div className='allBackground'>
     <header className='header'><ul>
     <li><a href='/'>Home</a></li>
     <li><a href='/'>About</a></li>

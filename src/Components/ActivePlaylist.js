@@ -6,8 +6,8 @@ const ActivePlaylist = () => {
     {console.log('this is active playlist', activePlaylist)}
     return(
         <div className="active-playlist-box"><img src={activePlaylist.images[0].url}></img>
-        <h5>Playlist Title</h5>
-        <p>Collaborators - this can either be static or new ways of determining how to make it dynamic will need to be made<br></br>Or Collaborators can be published elsewhere, this could show some genres in the playlist</p>
+        <a href={activePlaylist.external_urls.spotify}><h5>{activePlaylist.name}</h5></a>
+        <a href={activePlaylist.owner.external_urls.spotify}><p>Curated by {activePlaylist.owner.display_name}</p></a>
         </div>
     )
 }

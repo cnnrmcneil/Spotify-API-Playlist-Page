@@ -11,7 +11,8 @@ export const initialState = {
     activePlaylist: '',
     activePlaylistImage: '',
     songlist: null,
-    playlistID: ''
+    playlistID: '',
+    songNumber: null
 }
 
 const reducer = (state, action) => {
@@ -67,6 +68,11 @@ console.log('Reducer at work: ', action);
             return {
                 ...state,
                 playlistID: action.playlistID
+            }
+        case 'SET_SONGNUMBER':
+            return {
+                ...state,
+                songNumber: action.songNumber
             }
             default: 
                 return state;

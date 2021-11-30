@@ -1,6 +1,4 @@
 .container {
-  border: 2px;
-  border-style: groove;
   display: flex;
   justify-content: space-around;
   height: 75vh;
@@ -9,33 +7,42 @@
 }
 
 .title {
-  border: 2px;
-  border-style: groove;
   text-align: center;
+  color: white;
 }
 
+.activeBackground {
+  background-color: rgba(255, 255, 255, 0.014);
+  border-radius: 100px;
+}
 .active-playlist-box {
-  border: 2px;
-  border-style: groove;
   width: 30vw;
   height: 22vh;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 .active-playlist-box img {
   width: 110px;
   height: 110px;
+  margin-bottom: 10px;
 }
 .active-playlist-box h5 {
   margin: 0;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.active-playlist-box a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
 }
 
 .songlist {
-  border: 2px;
-  border-style: groove;
   width: 40vw;
   height: 55vh;
   margin: auto;
@@ -61,13 +68,22 @@
   display: flex;
   flex-direction: column;
 }
+.songartist span {
+  text-overflow: ellipsis !important;
+  max-height: 22px;
+  max-width: 400px;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .songbox {
   display: flex;
   flex-direction: row;
+  color: white;
 }
+
 .all-playlist-box {
-  border: 2px;
-  border-style: groove;
   width: 44vw;
   height: 45vh;
   margin: auto;
@@ -75,6 +91,10 @@
   flex-wrap: wrap;
   justify-content: start;
   overflow: auto;
+  border: white;
+  border-style: solid;
+  border-radius: 20px;
+  align-content: flex-start;
 }
 .all-playlist-box img {
   width: 90px;
@@ -86,51 +106,70 @@
 
 .imageBox {
   position: relative;
+  height: 90px;
+  width: 90px;
+  margin: 10px;
 }
 .overlay {
   position: absolute;
-  top: 0px;
-  bottom: 4px;
-  left: 0;
+  top: 10px;
+  bottom: 0px;
+  left: 10px;
   right: 0;
   height: 90px;
   width: 90px;
-  margin: auto;
+  margin: 0;
   padding: 0;
   opacity: 0;
   transition: 0.5s ease;
-  background-color: #008cba;
 }
-.imageBox:hover .overlay {
-  opacity: 0.5;
+.albumCover {
+  padding: 0;
+  transition: 1s ease;
+}
+.overlay:hover .albumCover {
+  opacity: 0.2;
+}
+.overlay:hover .overlay {
+  opacity: 1;
 }
 .overlay p {
   color: white;
-  font-size: 20px;
+  font-size: 1.5vh;
   position: absolute;
-  top: 20%;
+  top: 45%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  max-height: 80px;
+  text-overflow: ellipsis !important;
+  overflow: hidden;
+  max-width: 80px;
+  display: inline-block;
+  margin: 0;
 }
 ::-webkit-scrollbar {
   width: 10px;
+  max-height: 10px;
+  border-radius: 100px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(54, 54, 255, 0.479);
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
 .controller {
-  border: 2px;
-  border-style: groove;
   width: 40vw;
   height: 10vh;
   margin: auto;
@@ -141,8 +180,6 @@
   justify-content: center;
   flex-wrap: nowrap;
   flex-direction: column;
-  border: 2px;
-  border-style: groove;
   width: 45vw;
 }
 .rightbox {
@@ -150,7 +187,5 @@
   justify-content: center;
   flex-wrap: nowrap;
   flex-direction: column;
-  border: 2px;
-  border-style: groove;
   width: 45vw;
 }

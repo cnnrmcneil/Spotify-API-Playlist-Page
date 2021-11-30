@@ -1,5 +1,8 @@
 import React from "react";
 import { useDataLayerValue } from "./DataLayer";
+import SpotifyWebApi from "spotify-web-api-js";
+
+const spotify = new SpotifyWebApi();
 
 const AllPlaylistBox = () => {
     const [{ playlists, activePlaylist, songlist } , dispatch] = useDataLayerValue()
@@ -17,11 +20,16 @@ const AllPlaylistBox = () => {
                 type: "SET_PLAYLISTID",
                 playlistID: _playlist.id
             })
-            console.log('what is _playlist.id: ', _playlist.id)
-            console.log('what is songlist: ', songlist)
+            spotify.getPlaylist(_playlist.id).then((playlistTracks) => {
+             dispatch({
+             type: "SET_SONGLIST",
+             songlist: playlistTracks,
+                     })
+            })
         }}>
-        <img src={_playlist.images[0].url} alt='albumcover'></img>
         <div className="overlay"><p>{_playlist.name}</p></div>
+        <img className='albumCover' src={_playlist.images[0].url} alt='albumcover'></img>
+        
         </a>
         </div>
         
