@@ -5,7 +5,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 const spotify = new SpotifyWebApi();
 
 const Songlist = (props) => {
-    const [{ activePlaylist, songlist, token, playlistID, songNumber }, dispatch] = useDataLayerValue()
+    const [{ songlist, playlistID, songNumber }, dispatch] = useDataLayerValue()
     return(
         <div className="songlist" ><ol>
         {console.log('this is playlistID in songlist', playlistID)}

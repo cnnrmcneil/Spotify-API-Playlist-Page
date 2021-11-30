@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './App.css';
 import Login from './Components/Login';
 import Player from './Components/Player';
 import { getTokenFromUrl } from './Components/Spotify'
 import { useDataLayerValue } from "./Components/DataLayer"
 import SpotifyWebApi from 'spotify-web-api-js'
-import ActivePlaylist from './Components/ActivePlaylist';
-import axios from 'axios';
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ token, devices, activePlaylist, songlist, playlistID }, dispatch] = useDataLayerValue();
+  const [{ token, devices, songlist, playlistID }, dispatch] = useDataLayerValue();
 
 
   useEffect(() => {
@@ -80,11 +78,19 @@ function App() {
 
   return (
     <div className='allBackground'>
-    <header className='header'><ul>
+    <header className='header'>
+    <img src=".src/logoforspotifyapi.png" width="50px" height='50px' alt='logo'/><ul>
     <li><a href='/'>Home</a></li>
     <li><a href='/'>About</a></li>
+    <li><a href='/' alt='Sign Out'>{token ? <a alt='Sign Out' onClick={() => {
+      dispatch ({
+        type: "SET_TOKEN",
+        token: null,
+      })
+    }}>Sign Out</a> : <Login />}</a></li>
+
     </ul></header>
-    { token ? ( <Player spotify={spotify}/>): (<div><h1>Spotify API</h1><Login /></div>)}
+    { token ? ( <Player spotify={spotify}/>): (<div><h1 style={{color: 'white', textAlign: 'center', paddingTop: '200px'}}>Please Login To View</h1></div>)}
     </div>
   );
 }

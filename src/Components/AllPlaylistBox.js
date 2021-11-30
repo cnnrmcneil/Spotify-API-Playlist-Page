@@ -5,7 +5,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 const spotify = new SpotifyWebApi();
 
 const AllPlaylistBox = () => {
-    const [{ playlists, activePlaylist, songlist } , dispatch] = useDataLayerValue()
+    const [{ playlists } , dispatch] = useDataLayerValue()
     return(
         <div className="all-playlist-box">
         {playlists?.items?.map((_playlist) => {
@@ -27,8 +27,8 @@ const AllPlaylistBox = () => {
                      })
             })
         }}>
-        <div className="overlay"><p>{_playlist.name}</p></div>
         <img className='albumCover' src={_playlist.images[0].url} alt='albumcover'></img>
+        <div className="overlay"><p>{_playlist.name}</p></div>
         
         </a>
         </div>

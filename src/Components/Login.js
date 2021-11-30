@@ -4,8 +4,7 @@ const Login = () => {
 
     return(
         <div>
-            <h1>Login Component</h1>
-            <a href={loginUrl}>Login with Spotify</a>
+            <a href={loginUrl}>Sign In to Spotify</a>
         </div>
     )
 }

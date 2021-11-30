@@ -122,16 +122,17 @@
   padding: 0;
   opacity: 0;
   transition: 0.5s ease;
+  z-index: 999;
 }
 .albumCover {
   padding: 0;
   transition: 1s ease;
 }
-.overlay:hover .albumCover {
+.albumCover:hover .albumCover {
   opacity: 0.2;
 }
-.overlay:hover .overlay {
-  opacity: 1;
+.albumCover:hover .overlay {
+  opacity: 0.8;
 }
 .overlay p {
   color: white;
@@ -149,6 +150,7 @@
   max-width: 80px;
   display: inline-block;
   margin: 0;
+  z-index: 999;
 }
 ::-webkit-scrollbar {
   width: 10px;

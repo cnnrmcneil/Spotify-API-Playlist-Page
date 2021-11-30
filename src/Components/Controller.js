@@ -7,8 +7,8 @@ const styleProps = {
     trackArtistColor: 'white',
   trackNameColor: 'white',
   activeColor: 'black',
-  altColor: 'white',
-  bgColor: 'white',
+  altColor: 'black',
+  bgColor: 'black',
   height: 100,
   sliderTrackBorderRadius: 100,
 
@@ -20,7 +20,7 @@ const Controller = (props) => {
     useEffect(() => {
         setNewNumTrack(props.numTrack)
     }, [props])
-const [{ playing, devices, token, activePlaylist, songNumber }, dispatch] = useDataLayerValue()
+const [{ token, activePlaylist, songNumber }, dispatch] = useDataLayerValue()
     return(
         <div className="controller">
         <SpotifyPlayer styles={styleProps}
