@@ -1,7 +1,7 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
-const redirectUri = "https://cnnrmcneil.github.io/Spotify-API-Playlist-Page/";
-// const redirectUri = "http://localhost:3000/";
+// const redirectUri = "https://cnnrmcneil.githu  b.io";
+const redirectUri = "http://localhost:3000/";
 
 const clientId = "9b634ab5a09f410cb628e714fb30b5b8";
 

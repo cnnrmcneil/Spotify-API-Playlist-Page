@@ -80,7 +80,7 @@ function App() {
     <div className="allBackground">
       <header className="header">
         <img
-          src=".src/logoforspotifyapi.png"
+          src="logoforspotifyapi.png"
           width="50px"
           height="50px"
           alt="logo"

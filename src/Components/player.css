@@ -23,11 +23,12 @@
   flex-direction: column;
   align-items: center;
   color: white;
+  margin-bottom: 100px;
 }
 
 .active-playlist-box img {
-  width: 110px;
-  height: 110px;
+  width: 200px;
+  height: 200px;
   margin-bottom: 10px;
 }
 .active-playlist-box h5 {
@@ -89,7 +90,7 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: space-between;
   overflow: auto;
   border: white;
   border-style: solid;
@@ -97,60 +98,61 @@
   align-content: flex-start;
 }
 .all-playlist-box img {
-  width: 90px;
-  height: 90px;
+  width: 135px;
+  height: 135px;
   padding: 10px;
   margin: auto;
+  margin-top: 10px;
   z-index: 9999;
 }
 
 .imageBox {
   position: relative;
-  height: 90px;
-  width: 90px;
   margin: 10px;
 }
 .overlay {
   position: absolute;
-  top: 10px;
+  top: 0px;
   bottom: 0px;
-  left: 10px;
+  left: 0px;
   right: 0;
-  height: 90px;
-  width: 90px;
-  margin: 0;
+  margin: 10px;
   padding: 0;
   opacity: 0;
   transition: 0.5s ease;
   z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .albumCover {
   padding: 0;
   transition: 1s ease;
 }
-.albumCover:hover .albumCover {
+.overlay:hover + .albumCover {
   opacity: 0.2;
 }
-.albumCover:hover .overlay {
+
+.overlay:hover {
   opacity: 0.8;
 }
+
 .overlay p {
   color: white;
   font-size: 1.5vh;
   position: absolute;
-  top: 45%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  top: auto;
+  left: auto;
   text-align: center;
-  max-height: 80px;
   text-overflow: ellipsis !important;
   overflow: hidden;
-  max-width: 80px;
+  max-height: 120px;
+  max-width: 120px;
   display: inline-block;
   margin: 0;
   z-index: 999;
+  opacity: 1;
 }
 ::-webkit-scrollbar {
   width: 10px;
