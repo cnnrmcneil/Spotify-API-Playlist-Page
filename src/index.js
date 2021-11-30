@@ -5,12 +5,15 @@ import App from './App';
 import { DataLayer } from './Components/DataLayer';
 import reducer, { initialState } from './Components/Reducer';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
+  <BrowserRouter>
     <DataLayer initialState={initialState} reducer={reducer}>
     <App />
     </DataLayer>
+  </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
