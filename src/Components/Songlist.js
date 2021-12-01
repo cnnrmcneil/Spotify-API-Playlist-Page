@@ -29,7 +29,9 @@ const Songlist = (props) => {
                 ></button>
               </li>
               <div className="songartist">
-                <span>{item.track.name}</span>
+                <span>
+                  <b>{item.track.name}</b>
+                </span>
                 <span>
                   {item.track.artists
                     .map((artist) => {

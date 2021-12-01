@@ -142,3 +142,7 @@ function App() {
 }
 
 export default App;
+
+// hook goes here
+// const save = () => { localStorage.setItem('savedItem', item)}
+// let x = localStorage.getItem('savedItem')
