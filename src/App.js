@@ -6,6 +6,7 @@ import { getTokenFromUrl } from "./Components/Spotify";
 import { useDataLayerValue } from "./Components/DataLayer";
 import SpotifyWebApi from "spotify-web-api-js";
 import About from "./Components/About";
+import Default from "./Components/Default";
 import { Switch, Route, Link } from "react-router-dom";
 
 const spotify = new SpotifyWebApi();
@@ -79,21 +80,15 @@ function App() {
   return (
     <div className="allBackground">
       <header className="header">
-        <img
-          src="logoforspotifyapi.png"
-          width="50px"
-          height="50px"
-          alt="logo"
-        />
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/" alt="Sign Out">
+            <a href="/home" alt="Sign Out">
               {token ? (
                 <a
                   alt="Sign Out"
@@ -116,7 +111,7 @@ function App() {
       <Switch>
         <Route
           exact
-          path="/"
+          path="/home"
           component={() => {
             return token ? (
               <Player spotify={spotify} />
@@ -136,6 +131,7 @@ function App() {
           }}
         />
         <Route exact path="/about" component={About} />
+        <Route exact path="/Spotify-API-Playlist-Page" component={Default} />
       </Switch>
     </div>
   );

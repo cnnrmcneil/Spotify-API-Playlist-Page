@@ -25,6 +25,7 @@ const Controller = (props) => {
         token={token}
         uris={[`${activePlaylist.uri}`]}
         offset={songNumber}
+        initialVolume={0.2}
         autoPlay={true}
       />
     </div>

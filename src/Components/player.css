@@ -194,3 +194,14 @@
   flex-direction: column;
   width: 45vw;
 }
+
+.defaultPage {
+}
+.defaultPage h1 {
+  color: white;
+  text-align: center;
+}
+.defaultPage p {
+  color: white;
+  text-align: center;
+}
