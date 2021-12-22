@@ -5,7 +5,30 @@
   width: 95vw;
   margin: 0 2.5vw;
 }
-
+.image2 {
+  width: 80vw;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: black;
+  border-width: 5px;
+  border-style: solid;
+}
+.image1 {
+  width: 25vw;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: black;
+  border-width: 5px;
+  border-style: solid;
+}
 .title {
   text-align: center;
   color: white;
@@ -57,9 +80,12 @@
   list-style-type: none;
 }
 .songlist li {
-  display: block;
-  margin: 10px 20px 10px 0px;
+  display: flex;
+  margin: 10px 30px 10px 0px;
   width: 20px;
+}
+.songlist li button {
+  margin-left: 10px;
 }
 .songlistLi:before {
   content: counter(item) "  ";
@@ -68,6 +94,7 @@
 .songartist {
   display: flex;
   flex-direction: column;
+  margin-left: 30px;
 }
 .songartist span {
   text-overflow: ellipsis !important;
@@ -200,6 +227,7 @@
 .defaultPage h1 {
   color: white;
   text-align: center;
+  padding-bottom: 100px;
 }
 .defaultPage p {
   color: white;
@@ -210,7 +238,8 @@
   color: white;
   text-align: center;
   margin: auto;
-  padding-top: 20px;
+  padding-bottom: 20px !important;
+  padding-top: 20px !important;
 }
 .about h2 {
   color: white;
@@ -228,4 +257,7 @@
 .about p a {
   text-decoration: none;
   color: rgb(187, 168, 132);
+}
+.lastP {
+  padding-bottom: 40px;
 }
