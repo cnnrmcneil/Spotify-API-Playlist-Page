@@ -205,3 +205,27 @@
   color: white;
   text-align: center;
 }
+
+.about h1 {
+  color: white;
+  text-align: center;
+  margin: auto;
+  padding-top: 20px;
+}
+.about h2 {
+  color: white;
+  text-align: center;
+  margin: auto;
+  padding-top: 20px;
+}
+.about p {
+  color: white;
+  text-align: center;
+  width: 80vw;
+  margin: auto;
+  padding-top: 20px;
+}
+.about p a {
+  text-decoration: none;
+  color: rgb(187, 168, 132);
+}
