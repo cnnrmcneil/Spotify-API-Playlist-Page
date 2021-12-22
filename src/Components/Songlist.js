@@ -26,7 +26,9 @@ const Songlist = (props) => {
                       songNumber: index,
                     });
                   }}
-                ></button>
+                >
+                  Play
+                </button>
               </li>
               <div className="songartist">
                 <span>

@@ -11,6 +11,11 @@ const About = () => {
         API can provide you an approved login token.
       </p>
       <h2>How the website functions</h2>
+      <p>
+        Upon pressing the Sign In to Spotify button, Spotify will notify you of
+        the permissions being requested and provide you with a token to make
+        requests to the Spotify API
+      </p>
     </div>
   );
 };
