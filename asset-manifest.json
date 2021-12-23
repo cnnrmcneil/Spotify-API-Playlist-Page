@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Spotify-API-Playlist-Page/static/css/main.9401714c.chunk.css",
-    "main.js": "/Spotify-API-Playlist-Page/static/js/main.34c7ec4a.chunk.js",
-    "main.js.map": "/Spotify-API-Playlist-Page/static/js/main.34c7ec4a.chunk.js.map",
+    "main.css": "/Spotify-API-Playlist-Page/static/css/main.26fb7b11.chunk.css",
+    "main.js": "/Spotify-API-Playlist-Page/static/js/main.c844f72b.chunk.js",
+    "main.js.map": "/Spotify-API-Playlist-Page/static/js/main.c844f72b.chunk.js.map",
     "runtime-main.js": "/Spotify-API-Playlist-Page/static/js/runtime-main.5585d057.js",
     "runtime-main.js.map": "/Spotify-API-Playlist-Page/static/js/runtime-main.5585d057.js.map",
-    "static/js/2.6da5830b.chunk.js": "/Spotify-API-Playlist-Page/static/js/2.6da5830b.chunk.js",
-    "static/js/2.6da5830b.chunk.js.map": "/Spotify-API-Playlist-Page/static/js/2.6da5830b.chunk.js.map",
+    "static/js/2.7ff5da7a.chunk.js": "/Spotify-API-Playlist-Page/static/js/2.7ff5da7a.chunk.js",
+    "static/js/2.7ff5da7a.chunk.js.map": "/Spotify-API-Playlist-Page/static/js/2.7ff5da7a.chunk.js.map",
     "static/js/3.276d9d26.chunk.js": "/Spotify-API-Playlist-Page/static/js/3.276d9d26.chunk.js",
     "static/js/3.276d9d26.chunk.js.map": "/Spotify-API-Playlist-Page/static/js/3.276d9d26.chunk.js.map",
     "index.html": "/Spotify-API-Playlist-Page/index.html",
-    "static/css/main.9401714c.chunk.css.map": "/Spotify-API-Playlist-Page/static/css/main.9401714c.chunk.css.map",
-    "static/js/2.6da5830b.chunk.js.LICENSE.txt": "/Spotify-API-Playlist-Page/static/js/2.6da5830b.chunk.js.LICENSE.txt"
+    "static/css/main.26fb7b11.chunk.css.map": "/Spotify-API-Playlist-Page/static/css/main.26fb7b11.chunk.css.map",
+    "static/js/2.7ff5da7a.chunk.js.LICENSE.txt": "/Spotify-API-Playlist-Page/static/js/2.7ff5da7a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5585d057.js",
-    "static/js/2.6da5830b.chunk.js",
-    "static/css/main.9401714c.chunk.css",
-    "static/js/main.34c7ec4a.chunk.js"
+    "static/js/2.7ff5da7a.chunk.js",
+    "static/css/main.26fb7b11.chunk.css",
+    "static/js/main.c844f72b.chunk.js"
   ]
 }
