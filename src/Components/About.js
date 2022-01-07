@@ -11,13 +11,13 @@ const About = () => {
         API can provide you an approved login token.
       </p>
       <h2>How the website functions</h2>
-      <img src="https://imgur.com/7FEdUYz" className="image1" />
+      <img src="https://i.imgur.com/7FEdUYz.png" className="image1" />
       <p>
         Upon pressing the Sign In to Spotify button, Spotify will notify the
         user of the permissions being requested and provide the user with a
         token to make requests to the Spotify API
       </p>
-      <img src="https://imgur.com/ck845p0" className="image2" />
+      <img src="https://i.imgur.com/ck845p0.png" className="image2" />
       <p>
         On the home page, Spotify will pull the users information from your
         public playlists and display them. The site also features a Web Player
