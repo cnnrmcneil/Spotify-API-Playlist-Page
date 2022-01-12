@@ -6,7 +6,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 const spotify = new SpotifyWebApi();
 
 const AllPlaylistBox = () => {
-  const [{ playlists }, dispatch] = useDataLayerValue();
+  const [{ playlists, songNumber }, dispatch] = useDataLayerValue();
   return (
     <div className="all-playlist-box">
       {playlists?.items?.map((_playlist) => {
@@ -27,6 +27,7 @@ const AllPlaylistBox = () => {
                   type: "SET_SONGNUMBER",
                   songNumber: 0,
                 });
+                console.log("This is song number :", songNumber);
                 spotify.getPlaylist(_playlist.id).then((playlistTracks) => {
                   dispatch({
                     type: "SET_SONGLIST",

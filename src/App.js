@@ -12,7 +12,7 @@ import { Switch, Route, Link } from "react-router-dom";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ token, devices, songlist, playlistID }, dispatch] =
+  const [{ token, devices, songlist, playlistID, songNumber }, dispatch] =
     useDataLayerValue();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function App() {
     window.location.hash = "";
     let _token = hash.access_token;
 
-    console.log("this is _token", _token);
+    // console.log("this is _token", _token);
     if (_token) {
       dispatch({
         type: "SET_TOKEN",
@@ -68,9 +68,10 @@ function App() {
     }
   }, [token, dispatch]);
 
-  console.log("this is playlistID", playlistID);
-  console.log("this is songlist", songlist);
-  console.log("Token: ", token);
+  // console.log("this is playlistID", playlistID);
+  // console.log("this is songlist", songlist);
+  console.log("This is songnumber from app.js: ", songNumber);
+  // console.log("Token: ", token);
   // console.log('devices are: ', devices)
   // // console.log("playlists are: " )
   // console.log('User is: ', user);

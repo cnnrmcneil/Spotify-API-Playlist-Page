@@ -13,7 +13,7 @@ const styleProps = {
 
 const Controller = (props) => {
   const [newNumTrack, setNewNumTrack] = React.useState(0);
-  console.log("this is props", props);
+  // console.log("this is props", props);
   useEffect(() => {
     setNewNumTrack(props.numTrack);
   }, [props]);
