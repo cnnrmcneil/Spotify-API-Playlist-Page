@@ -23,6 +23,10 @@ const AllPlaylistBox = () => {
                   type: "SET_PLAYLISTID",
                   playlistID: _playlist.id,
                 });
+                dispatch({
+                  type: "SET_SONGNUMBER",
+                  songNumber: 0,
+                });
                 spotify.getPlaylist(_playlist.id).then((playlistTracks) => {
                   dispatch({
                     type: "SET_SONGLIST",
